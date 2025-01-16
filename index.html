@@ -1,68 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre a FlyGO</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <title>FlyGO - Sua Agência de Viagens Aéreas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">FlyGO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#promocoes">Promoções</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Sobre Nós</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contato">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Sobre a FlyGO -->
-    <section class="py-5">
-        <div class="container">
-            <h1 class="text-center">Sobre a FlyGO</h1>
-            <p class="text-center">Descubra nossa história e missão</p>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <p>
-                        A FlyGO foi fundada por Ruan, Marco e André com um propósito claro: proporcionar viagens seguras e inesquecíveis para todos os nossos clientes. Com anos de experiência e uma paixão por explorar o mundo, nossa equipe está comprometida em oferecer um serviço de qualidade que une conforto, confiança e inovação.
-                    </p>
-                    <p>
-                        Nosso foco principal é garantir que cada cliente tenha uma experiência única, desde o momento da reserva até o destino final. Acreditamos que viajar não é apenas ir de um lugar a outro, mas também criar memórias e histórias que durarão para sempre.
-                    </p>
-                    <p>
-                        Escolha a FlyGO e permita-nos ser parte da sua próxima aventura. Estamos prontos para levá-lo aos destinos dos seus sonhos com segurança e excelência.
-                    </p>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="Logo FlyGO" class="logo">
+                    FlyGO
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Destinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contato</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 FlyGO. Todos os direitos reservados.</p>
+    <main class="main">
+        <section class="banner">
+            <div class="container">
+                <div class="jumbotron text-center">
+                    <h1 class="display-4">Encontre as Melhores Passagens Aéreas</h1>
+                    <p class="lead">Descubra destinos incríveis com a FlyGO!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-form">
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Pesquisar Voos</h2>
+                        <form id="flight-search-form">
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="origin">Origem</label>
+                                    <input type="text" class="form-control" id="origin" placeholder="Cidade ou Aeroporto">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="destination">Destino</label>
+                                    <input type="text" class="form-control" id="destination" placeholder="Cidade ou Aeroporto">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="departure-date">Data de Ida</label>
+                                    <input type="date" class="form-control" id="departure-date">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="return-date">Data de Volta (Opcional)</label>
+                                    <input type="date" class="form-control" id="return-date">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Buscar Voos</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-destinations">
+            <div class="container">
+                <h2>Destinos Populares</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="images/destination1.jpg" class="card-img-top" alt="Destino 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Cidade 1</h5>
+                                <p class="card-text">Uma descrição breve deste destino incrível.</p>
+                                <a href="#" class="btn btn-primary">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="images/destination2.jpg" class="card-img-top" alt="Destino 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Cidade 2</h5>
+                                <p class="card-text">Outra descrição breve deste destino.</p>
+                                <a href="#" class="btn btn-primary">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="card">
+                            <img src="images/destination3.jpg" class="card-img-top" alt="Destino 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Cidade 3</h5>
+                                <p class="card-text">Mais uma descrição deste destino fascinante.</p>
+                                <a href="#" class="btn btn-primary">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2024 FlyGO. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

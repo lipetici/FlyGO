@@ -1,0 +1,84 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const searchParams = new URLSearchParams(window.location.search);
+  const origin = searchParams.get('origin');
+  const destination = searchParams.get('destination');
+  const departureDate = searchParams.get('departureDate');
+  const returnDate = searchParams.get('returnDate');
+
+  console.log('Origem:', origin);
+  console.log('Destino:', destination);
+  console.log('Data de Ida:', departureDate);
+  console.log('Data de Volta:', returnDate);
+  
+  const resultsContainer = document.getElementById('searchResults');
+  resultsContainer.innerHTML = ''; // Limpa os resultados anteriores
+  
+  const fakeResults = [
+        {
+            id: 1,
+            origin: origin,
+            destination: destination,
+            departureTime: '08:00',
+            arrivalTime: '12:00',
+            price: 'R$ 500,00',
+            airline: 'VoeAzul',
+            date: departureDate,
+            roundTrip: returnDate !== null ? true : false,
+            returnTime: '15:00',
+            returnArrivalTime: '19:00'
+          },
+          {
+              id: 2,
+              origin: origin,
+              destination: destination,
+              departureTime: '14:00',
+              arrivalTime: '18:00',
+              price: 'R$ 650,00',
+              airline: 'GOL',
+              date: departureDate,
+              roundTrip: returnDate !== null ? true : false,
+              returnTime: '20:00',
+              returnArrivalTime: '23:00'
+          },
+          {
+            id: 3,
+              origin: origin,
+              destination: destination,
+              departureTime: '20:00',
+              arrivalTime: '02:00',
+              price: 'R$ 750,00',
+              airline: 'LATAM',
+              date: departureDate,
+              roundTrip: returnDate !== null ? true : false,
+              returnTime: '10:00',
+              returnArrivalTime: '14:00'
+          }
+      ];
+
+      fakeResults.forEach(flight => {
+        const resultItem = document.createElement('div');
+        resultItem.classList.add('result-item');
+    
+        const detailsDiv = document.createElement('div');
+        detailsDiv.classList.add('details');
+        detailsDiv.innerHTML = `
+            <p><strong>Origem:</strong> ${flight.origin}</p>
+            <p><strong>Destino:</strong> ${flight.destination}</p>
+            <p><strong>Data de Ida:</strong> ${flight.date}</p>
+             <p><strong>Horário de Partida:</strong> ${flight.departureTime}</p>
+             <p><strong>Horário de Chegada:</strong> ${flight.arrivalTime}</p>
+            ${flight.roundTrip ? `<p><strong>Horário de Volta:</strong> ${flight.returnTime}</p> <p><strong>Horário de Chegada:</strong> ${flight.returnArrivalTime}</p>` : ''}
+            
+        `;
+    
+        const priceDiv = document.createElement('div');
+        priceDiv.classList.add('price');
+        priceDiv.textContent = flight.price;
+      
+    
+        resultItem.appendChild(detailsDiv);
+        resultItem.appendChild(priceDiv);
+        resultsContainer.appendChild(resultItem);
+    });
+
+});
