@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .header {
@@ -28,9 +31,9 @@ body {
 .nav-link:hover {
     color: #ffd700 !important; /* Dourado do Real Madrid */
 }
-
 .main {
     padding: 20px 0;
+    flex: 1;
 }
 
 .banner {
@@ -78,11 +81,8 @@ body {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
-
 .btn-primary {
     background-color: #002d62; /* Azul escuro do Real Madrid */
     border-color: #002d62;
