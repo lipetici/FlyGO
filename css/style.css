@@ -37,7 +37,7 @@ body {
 }
 
 .banner {
-    background-image: url('../images/banner.jpg'); /* Substitua pelo seu banner */
+    background-image: url('5.webp'); /* Substitua pelo seu banner */
     background-size: cover;
     background-position: center;
     color: white;
