@@ -15,6 +15,7 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
+            text-align: center;
         }
         header {
             background: #005f73;
@@ -35,6 +36,21 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .interactive-button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background: #0a9396;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .interactive-button:hover {
+            background: #94d2bd;
+        }
         footer {
             text-align: center;
             padding: 20px;
@@ -43,6 +59,11 @@
             margin-top: 20px;
         }
     </style>
+    <script>
+        function showMessage() {
+            alert('Estamos prontos para planejar sua viagem dos sonhos!');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -61,6 +82,7 @@
                 <li>Atendimento personalizado para cada cliente</li>
                 <li>Preços competitivos e condições de pagamento facilitadas</li>
             </ul>
+            <button class="interactive-button" onclick="showMessage()">Saiba Mais</button>
         </div>
     </div>
     <footer>
