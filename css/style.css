@@ -97,58 +97,83 @@ body {
 }
 /* Estilos para a página de destinos */
 .destinations-section {
-    padding: 30px 0;
+    padding: 40px 0;
+    background-color: #f8f9fa; /* Fundo mais claro */
 }
 
 .destinations-section h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     color: #002d62; /* Azul escuro - tema FlyGO */
     font-weight: bold;
+    font-size: 2.5rem; /* Tamanho maior para o título */
 }
 
 .destinations-section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #002d62; /* Azul escuro - tema FlyGO */
     font-weight: bold;
+    font-size: 1.8rem; /* Tamanho maior para os subtítulos */
 }
 
-.destinations-section ul {
-    list-style: disc;
-    margin-left: 20px;
-    color: #333; /* Cor mais suave para o texto */
+.destinations-section .dicas-viagem {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra mais suave */
 }
 
-.destinations-section li {
-    margin-bottom: 5px;
-    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+.destinations-section .list-unstyled li {
+    margin-bottom: 12px;
+    line-height: 1.7; /* Espaçamento entre linhas para melhor legibilidade */
+    font-size: 1.1rem; /* Aumenta o tamanho da fonte */
+    color: #555; /* Cor mais suave para o texto */
+}
+
+.destinations-section .destinos-populares {
+    padding: 20px;
 }
 
 .destinations-section .card {
-    margin-bottom: 20px;
-    border: none; /* Remove a borda padrão do card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao passar o mouse */
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease;
+    border-radius: 10px; /* Borda arredondada */
+    overflow: hidden; /* Garante que as bordas arredondadas funcionem corretamente com a imagem */
 }
 
 .destinations-section .card:hover {
-    transform: translateY(-5px); /* Move o card um pouco para cima ao passar o mouse */
+    transform: translateY(-8px); /* Move mais para cima no hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Sombra mais forte no hover */
+}
+
+.destinations-section .card-img-top {
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Preenche o espaço mantendo a proporção */
+}
+
+.destinations-section .card-body {
+    padding: 20px;
 }
 
 .destinations-section .card-title {
     color: #002d62; /* Azul escuro - tema FlyGO */
     font-weight: bold;
+    font-size: 1.4rem; /* Tamanho maior para o título do card */
     margin-bottom: 10px;
 }
 
 .destinations-section .card-text {
-    color: #555; /* Cor mais suave para o texto */
-    font-size: 0.9rem; /* Tamanho da fonte um pouco menor */
+    color: #777; /* Cor mais suave para o texto */
+    font-size: 1rem;
+    line-height: 1.6; /* Espaçamento entre linhas */
 }
 
 .destinations-section .btn-primary {
     background-color: #002d62; /* Azul escuro - tema FlyGO */
     border-color: #002d62;
+    padding: 10px 20px; /* Aumenta o padding do botão */
+    font-size: 1rem;
 }
 
 .destinations-section .btn-primary:hover {
