@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas de Hotéis - FlyGO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para a página de reservas de hotéis */
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .hotel-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .hotel-card h5 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="logo.webp" alt="Logo FlyGO" class="logo">
+                    FlyGO
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="historia.html">Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="destinos.html">Destinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ajuda.html">Ajuda</a>
+                        </li>
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownReservas" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Reservas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownReservas">
+                                <a class="dropdown-item" href="reservas-passagens.html">Passagens</a>
+                                <a class="dropdown-item" href="reservas-hoteis.html">Hotéis</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="container">
+            <h1>Reservas de Hotéis</h1>
+
+            <!-- Formulario de Busca -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Encontre o Hotel Perfeito</h5>
+                    <form id="hotel-search-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="destination">Destino</label>
+                                <input type="text" class="form-control" id="destination" placeholder="Cidade ou Local" required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="checkinDate">Check-in</label>
+                                <input type="date" class="form-control" id="checkinDate" required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="checkoutDate">Check-out</label>
+                                <input type="date" class="form-control" id="checkoutDate" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Buscar Hotéis</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Resultados da Busca (ocultos inicialmente) -->
+            <div id="searchResults" class="search-results" style="display: none;">
+                <h2>Resultados da Busca</h2>
+                <div id="hotels-container">
+                    <!-- Aqui serão exibidos os resultados da busca -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2024 FlyGO. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // script.js
+
+//Função genérica para simular uma busca e exibir resultados
+function setupSearchForm(formId, resultsContainerId, data, cardClass, displayFunction) {
+  const form = document.getElementById(formId);
+  const resultsContainer = document.getElementById(resultsContainerId);
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    displayResults(data, resultsContainer, cardClass, displayFunction);
+    resultsContainer.style.display = 'block'; // Exibe os resultados
+  });
+}
+
+//Função genérica para exibir os resultados
+function displayResults(data, container, cardClass, displayFunction) {
+  container.innerHTML = ''; // Limpa resultados anteriores
+  data.forEach(item => {
+    const card = document.createElement('div');
+    card.className = cardClass;
+    card.innerHTML = displayFunction(item);
+    container.appendChild(card);
+  });
+}
+
+//Dados de exemplo para Voos
+const flightData = [
+  { id: 1, origin: 'São Paulo', destination: 'Rio de Janeiro', date: '2024-05-15', price: 'R$ 350' },
+  { id: 2, origin: 'São Paulo', destination: 'Salvador', date: '2024-05-20', price: 'R$ 500' }
+];
+
+//Dados de exemplo para Hotéis
+const hotelData = [
+  { id: 1, name: 'Hotel Copacabana', location: 'Rio de Janeiro', checkin: '2024-05-15', checkout: '2024-05-20', price: 'R$ 800' },
+  { id: 2, name: 'Hotel Ipanema', location: 'Rio de Janeiro', checkin: '2024-05-20', checkout: '2024-05-25', price: 'R$ 900' }
+];
+
+//Função para formatar os cards de voo
+function formatFlightCard(flight) {
+  return `<h5>Voo de ${flight.origin} para ${flight.destination}</h5>
+            <p>Data: ${flight.date}</p>
+            <p>Preço: ${flight.price}</p>`;
+}
+
+//Função para formatar os cards de hotel
+function formatHotelCard(hotel) {
+  return `<h5>${hotel.name}</h5>
+          <p>Localização: ${hotel.location}</p>
+          <p>Preço: ${hotel.price}</p>`;
+}
+
+//Configura os formulários de busca quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', function () {
+  //Configura a busca de voos
+  setupSearchForm(
+    'flight-search-form',
+    'flights-container',
+    flightData,
+    'flight-card',
+    formatFlightCard
+  );
+
+  //Configura a busca de hotéis
+  setupSearchForm(
+    'hotel-search-form',
+    'hotels-container',
+    hotelData,
+    'hotel-card',
+    formatHotelCard
+  );
+});
+    </script>
+</body>
+
+</html>
