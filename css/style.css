@@ -101,6 +101,12 @@ body {
     background-color: #f8f9fa; /* Fundo mais claro */
 }
 
+.destinations-section p {
+    text-align: center;
+    color: #000000;
+    margin: bottom 40px; ;
+}
+
 .destinations-section h1 {
     text-align: center;
     margin-bottom: 40px;
