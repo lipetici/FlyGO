@@ -79,19 +79,20 @@ body {
 }
 
 .footer {
-    background-color: #0e0496; /* Azul escuro do Real Madrid */
+    background-color: #070608; 
     color: white;
     text-align: center;
     padding: 30px 0;
     width: 100%;
 }
 .btn-primary {
-    background-color: #002d62; /* Azul escuro do Real Madrid */
+    background-color: #002d62;
     border-color: #002d62;
 }
 
+
 .btn-primary:hover {
-    background-color: #ffd700; /* Dourado do Real Madrid */
+    background-color: #ffd700; 
     border-color: #ffd700;
     color: #002d62;
 }
